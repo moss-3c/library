@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <button id="add-book" submit="/">+ Add book</button>
+   
+        <div class="card">
+            <div class="label">title</div>
+            <div class="title content">lord of the rings</div>
+            <div class="label">author</div>
+            <div class="author content">jrr tolkien</div>
+            <div class="label">pages</div>
+            <div class="pages content">987</div>
+            <div class="label">notes</div>
+            <div class="notes content">good book good book good book good book good book good book good book good book </div>
+            <button class="card-button delete" submit="/">delete</button>
+            <button class="card-button" submit="/">read?</button>
+        </div>
+        <template id="card-template">
+            <div class="card">
+                <div class="label">title</div>
+                <div class="title content"></div>
+                <div class="label">author</div>
+                <div class="author content"></div>
+                <div class="label">pages</div>
+                <div class="pages content"></div>
+                <div class="label">notes</div>
+                <div class="notes content"></div>
+                <div class="label">read?</div>
+                <div class="read content"></div>
+                <button class="card-button delete" submit="/">delete</button>
+                <button class="card-button" submit="/">toggle read</button>
+            </div>
+        </template>
+    </div>
+</body>
+</html>

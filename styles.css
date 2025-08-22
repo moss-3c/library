@@ -1,0 +1,71 @@
+@import url('https://fonts.bunny.net/css2?family=Lexend:wght@100..900&display=swap');
+:root{
+    --bg-color:rgb(202, 231, 185);
+    --button-bg:rgb(159, 196, 137);
+    --lighter-text: rgb(123, 161, 115);
+    --shadow:rgba(108, 138, 92, 0.815);
+    --text:rgba(42, 63, 42, 0.89);
+    --card-bg: rgba(160, 204, 154, 0.63);
+    --red-shadow: rgba(211, 97, 97, 0.705);
+    --red-text: rgba(114, 61, 61, 0.884);
+    --red-bg: rgba(240, 151, 151, 0.856);
+}
+body {
+    background-color: var(--bg-color);
+    font-family: 'Lexend', sans serif;
+    color: var(--text);
+}
+
+button {
+    font-family: 'Lexend', sans serif;
+    border-radius: 1rem;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: var(--button-bg);
+    color: var(--text);
+    transition: 150ms ease;
+    box-shadow: 0 5px var(--shadow);
+}
+#add-book{
+    margin: 1rem auto;
+    display: block;
+}
+.card-button {
+    padding: 0.5rem 1rem;
+    margin-top: 0.6ch;
+}
+button:hover{
+    cursor:pointer;
+}
+button:active{
+    transform: translate(0, 5px);
+    box-shadow: none;
+}
+.delete {
+    background-color: var(--red-bg);
+    box-shadow: 0 5px var(--red-shadow);
+    color: var(--red-text);
+}
+.label {
+    color: var(--lighter-text);
+    font-size: 0.9rem;
+}
+.content{
+    border-radius: 0.2rem;
+    border-left: 2px solid var(--lighter-text);
+    padding: 0.1rem 0.5ch;
+    margin-bottom: 0.3rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: 1rem;
+    margin: 1rem;
+
+}
+.card {
+    max-width: 20rem;
+
+}
