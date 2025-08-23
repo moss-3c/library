@@ -8,7 +8,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <button id="add-book" submit="/">+ Add book</button>
+    <button class="add-book">+ Add book</button>
     <dialog open>
         <form action="/">
             <div>
@@ -21,7 +21,7 @@
             </div>
             <div>
                 <label for="pages">Pages</label>
-                <input type="number" id="pages" name="pages" placeholder="883">
+                <input type="text" id="pages" name="pages" placeholder="883">
             </div>
             <div>
                 <label for="notes">Notes</label>
@@ -30,8 +30,11 @@
             <div>
                 <input type="checkbox" id="read" name="read">
                 <label for="read">Read?</label>
-                
             </div>
+            <div>
+                <button type="submit" class="form-button">+ Add book</button>
+                <button type="button" class="form-button red-button">Cancel</button>
+            </div> 
         </form>
     </dialog>
         <div class="card">
@@ -43,8 +46,8 @@
             <div class="pages content">987</div>
             <div class="label">notes</div>
             <div class="notes content">good book good book good book good book good book good book good book good book </div>
-            <button class="card-button delete" submit="/">delete</button>
-            <button class="card-button" submit="/">read?</button>
+            <button class="card-button red-button" submit="/">delete</button>
+            <button class="card-button" submit="/">toggle read</button>
         </div>
         <template id="card-template">
             <div class="card">
@@ -58,8 +61,8 @@
                 <div class="notes content"></div>
                 <div class="label">read?</div>
                 <div class="read content"></div>
-                <button class="card-button delete" submit="/">delete</button>
                 <button class="card-button" submit="/">toggle read</button>
+                <button class="card-button red-button" submit="/">delete</button>
             </div>
         </template>
         

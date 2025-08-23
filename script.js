@@ -33,10 +33,14 @@ function displayBook(book) {
 }
 
 const addButton = document.querySelector('#add-book');
+const form = document.querySelector('dialog');
 addButton.addEventListener('click', );
 
 /**
  * new book button
+ * - click button -> form should pop up
+ * - form needs a submit button
+ * - on clicking submit, eventpreventdefault + should make a book and store it from the data
  * remove book button
  * read status
  */

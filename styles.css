@@ -27,7 +27,7 @@ button {
     transition: 150ms ease-in;
     box-shadow: 0 5px var(--shadow);
 }
-#add-book{
+.add-book{
     margin: 1rem auto;
     display: block;
 }
@@ -42,7 +42,7 @@ button:active{
     transform: translate(0, 5px);
     box-shadow: none;
 }
-.delete {
+.red-button {
     background-color: var(--red-bg);
     box-shadow: 0 5px var(--red-shadow);
     color: var(--red-text);
@@ -53,7 +53,7 @@ button:active{
 }
 .content{
     border-radius: 0.2rem;
-    border-left: 2px solid var(--lighter-text);
+    border-left: 3px solid var(--lighter-text);
     padding: 0.1rem 0.5ch;
     margin-bottom: 0.3rem;
 }
@@ -71,11 +71,12 @@ button:active{
 }
 
 dialog {
-    border: 3px dashed var(--shadow);
+    border: none;
     color: var(--text);
     background-color: var();
     backdrop-filter: blur(2px);
     margin: 0 auto;
+    box-shadow: 0 3px 4px 4px var(--shadow);
 }
 input, textarea{
     border-left: var(--shadow) 3px solid;
@@ -89,6 +90,7 @@ input, textarea{
     color: var(--text);
     transition: 150ms ease;
     padding: 0.2rem 0.4rem;
+    max-width: 100%;
 }
 textarea:focus, input:focus{
     border: none;
@@ -126,6 +128,9 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
     visibility: visible;
 }
+input[type="checkbox"]:checked {
+    background-color: var(--bg-color);
+}
 
 form {
     display: flex;
@@ -147,4 +152,13 @@ div:has(#read) {
 }
 label[for="read"] {
     font-size: 1rem;
+}
+
+.form-button{ 
+   
+ 
+}
+div:has(.form-button) {
+    text-align: center;
+     display: inline-block;
 }
