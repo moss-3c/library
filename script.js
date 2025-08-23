@@ -41,6 +41,8 @@ const addBtn = document.querySelector('.add-book');
 addBtn.addEventListener('click', () => {dialog.showModal()})
 const cancelBtn = document.getElementById("cancel");
 cancelBtn.addEventListener('click', () => {dialog.close()});
+const submitBtn = document.getElementById('submit-book');
+submitBtn.addEventListener('click', () => {dialog.close()});
 
 const form = document.getElementById('book-form');
 form.addEventListener("submit", (e) => {
@@ -53,8 +55,6 @@ form.addEventListener("submit", (e) => {
         document.getElementById('read').value,
     )
     displayBook(book);
-    /* chedkbox issu
-    */
 })
 
 /**
