@@ -31,6 +31,7 @@ function displayBook(book) {
          content = card.querySelector(`.${properties[i]}`);
          content.textContent = book[properties[i]];
      }
+ 
     let body = document.querySelector('.container');
     body.appendChild(card);
 }
@@ -42,7 +43,8 @@ addBtn.addEventListener('click', () => {dialog.showModal()})
 const cancelBtn = document.getElementById("cancel");
 cancelBtn.addEventListener('click', () => {dialog.close()});
 const submitBtn = document.getElementById('submit-book');
-submitBtn.addEventListener('click', () => {dialog.close()});
+submitBtn.addEventListener('click', () => {
+});
 
 const form = document.getElementById('book-form');
 form.addEventListener("submit", (e) => {
@@ -55,11 +57,11 @@ form.addEventListener("submit", (e) => {
         document.getElementById('read').value,
     )
     displayBook(book);
+    dialog.close();
+    form.reset();
 })
 
 /**
- * new book button
- * - on clicking submit, eventpreventdefault + should make a book and store it from the data
  * remove book button
  * read status
  */
