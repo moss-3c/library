@@ -11,10 +11,13 @@ function Book(title, author, pages, notes, read) {
     this.read = read;
     this.notes = notes;
 }
-function addBookToLib(title, author) {
-    myLib.push(new Book(id, title, author));
+function addBookToLib(title, author, pages, notes, read) {
+    book = new Book(title, author, pages, notes, read);
+    myLib.push(book);
+    return book;
 }
 function displayLib () {
+
     //loops through the array and displays each book on the page
     myLib.forEach((book) => displayBook(book));
 }
@@ -28,23 +31,36 @@ function displayBook(book) {
          content = card.querySelector(`.${properties[i]}`);
          content.textContent = book[properties[i]];
      }
-    let body = document.querySelector('body');
+    let body = document.querySelector('.container');
     body.appendChild(card);
 }
 
-const cancelBtn = document.getElementById("cancel");
-const addBtn = document.querySelector('.add-book');
+//opening and closing the form
 const dialog = document.querySelector('dialog');
+const addBtn = document.querySelector('.add-book');
 addBtn.addEventListener('click', () => {dialog.showModal()})
+const cancelBtn = document.getElementById("cancel");
 cancelBtn.addEventListener('click', () => {dialog.close()});
+
+const form = document.getElementById('book-form');
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const book = addBookToLib(
+        document.getElementById('title').value,
+        document.getElementById('author').value,
+        document.getElementById('pages').value,
+        document.getElementById('notes').value,
+        document.getElementById('read').value,
+    )
+    displayBook(book);
+    /* chedkbox issu
+    */
+})
 
 /**
  * new book button
- * - click button -> form should pop up
  * - on clicking submit, eventpreventdefault + should make a book and store it from the data
  * remove book button
  * read status
  */
 myLib[0] = new Book("lotr","tolkien","987", "good book", "true");
-displayBook(myLib[0]);
-displayBook(myLib[0]);

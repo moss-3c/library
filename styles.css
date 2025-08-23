@@ -15,7 +15,11 @@ body {
     font-family: 'Lexend', sans serif;
     color: var(--text);
 }
-
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
 button {
     font-family: 'Lexend', sans serif;
     border-radius: 1rem;
@@ -27,8 +31,9 @@ button {
     transition: 150ms ease-in;
     box-shadow: 0 5px var(--shadow);
 }
+
 .add-book{
-    margin: 1rem auto;
+    margin: 0 auto;
     display: block;
 }
 .card-button {
@@ -76,7 +81,7 @@ dialog {
     background-color: var();
     backdrop-filter: blur(2px);
     box-shadow: 0 3px 4px 4px var(--shadow);
-    margin: 1rem auto;
+    margin: 5rem auto;
     
 }
 input, textarea{
@@ -93,7 +98,17 @@ input, textarea{
     padding: 0.2rem 0.4rem;
     max-width: 100%;
 }
-textarea:focus, input:focus{
+button:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px var(--shadow), 0 5px var(--shadow);;
+    translate: (0, 5px);
+}
+.red-button:focus {
+    box-shadow: 0 0 10px var(--red-shadow), 0 5px var(--red-shadow);;
+}
+textarea:focus, 
+input:focus{
     border: none;
     outline: none;
     box-shadow: 0 0 10px var(--shadow);
