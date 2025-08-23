@@ -32,14 +32,15 @@ function displayBook(book) {
     body.appendChild(card);
 }
 
-const addButton = document.querySelector('#add-book');
-const form = document.querySelector('dialog');
-addButton.addEventListener('click', );
+const cancelBtn = document.getElementById("cancel");
+const addBtn = document.querySelector('.add-book');
+const dialog = document.querySelector('dialog');
+addBtn.addEventListener('click', () => {dialog.showModal()})
+cancelBtn.addEventListener('click', () => {dialog.close()});
 
 /**
  * new book button
  * - click button -> form should pop up
- * - form needs a submit button
  * - on clicking submit, eventpreventdefault + should make a book and store it from the data
  * remove book button
  * read status

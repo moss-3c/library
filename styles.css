@@ -75,8 +75,9 @@ dialog {
     color: var(--text);
     background-color: var();
     backdrop-filter: blur(2px);
-    margin: 0 auto;
     box-shadow: 0 3px 4px 4px var(--shadow);
+    margin: 1rem auto;
+    
 }
 input, textarea{
     border-left: var(--shadow) 3px solid;
@@ -149,6 +150,7 @@ div:has(#read) {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    justify-content: center;
 }
 label[for="read"] {
     font-size: 1rem;
