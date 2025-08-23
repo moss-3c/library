@@ -31,7 +31,7 @@ function displayBook(book) {
          content = card.querySelector(`.${properties[i]}`);
          content.textContent = book[properties[i]];
      }
- 
+     card.querySelector('.card').setAttribute("id", book.id);
     let body = document.querySelector('.container');
     body.appendChild(card);
 }
