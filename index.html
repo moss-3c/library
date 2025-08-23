@@ -9,7 +9,31 @@
 </head>
 <body>
     <button id="add-book" submit="/">+ Add book</button>
-   
+    <dialog open>
+        <form action="/">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="How to be a Platypus">
+            </div>
+            <div>
+                <label for="Author">Author</label>
+                <input type="text" id="author" name="author" placeholder="Perry">
+            </div>
+            <div>
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" name="pages" placeholder="883">
+            </div>
+            <div>
+                <label for="notes">Notes</label>
+                <textarea id="notes" name="notes" placeholder="want to read, good book, etc." rows="5"></textarea>
+            </div>
+            <div>
+                <input type="checkbox" id="read" name="read">
+                <label for="read">Read?</label>
+                
+            </div>
+        </form>
+    </dialog>
         <div class="card">
             <div class="label">title</div>
             <div class="title content">lord of the rings</div>
@@ -38,6 +62,7 @@
                 <button class="card-button" submit="/">toggle read</button>
             </div>
         </template>
+        
     </div>
 </body>
 </html>

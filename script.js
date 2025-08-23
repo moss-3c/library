@@ -16,9 +16,9 @@ function addBookToLib(title, author) {
 }
 function displayLib () {
     //loops through the array and displays each book on the page
-    myLib.forEach((book) => displayCard(book));
+    myLib.forEach((book) => displayBook(book));
 }
-function displayCard(book) {
+function displayBook(book) {
     let temp = document.getElementById("card-template").content;
     let card = document.importNode(temp, true);
     let properties = Object.keys(book);
@@ -28,9 +28,12 @@ function displayCard(book) {
          content = card.querySelector(`.${properties[i]}`);
          content.textContent = book[properties[i]];
      }
-    let body = document.querySelector('body')
+    let body = document.querySelector('body');
     body.appendChild(card);
 }
+
+const addButton = document.querySelector('#add-book');
+addButton.addEventListener('click', );
 
 /**
  * new book button
@@ -38,5 +41,5 @@ function displayCard(book) {
  * read status
  */
 myLib[0] = new Book("lotr","tolkien","987", "good book", "true");
-console.log(myLib);
-displayCard(myLib[0]);
+displayBook(myLib[0]);
+displayBook(myLib[0]);

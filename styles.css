@@ -24,7 +24,7 @@ button {
     font-size: 1rem;
     background-color: var(--button-bg);
     color: var(--text);
-    transition: 150ms ease;
+    transition: 150ms ease-in;
     box-shadow: 0 5px var(--shadow);
 }
 #add-book{
@@ -47,7 +47,7 @@ button:active{
     box-shadow: 0 5px var(--red-shadow);
     color: var(--red-text);
 }
-.label {
+.label{
     color: var(--lighter-text);
     font-size: 0.9rem;
 }
@@ -58,14 +58,93 @@ button:active{
     margin-bottom: 0.3rem;
 }
 
-.card {
+.card, dialog {
     background-color: var(--card-bg);
     padding: 1.8rem;
     border-radius: 1rem;
     margin: 1rem;
-
+    max-width: 20rem;
+    
 }
 .card {
-    max-width: 20rem;
+    box-shadow: 0 5px var(--shadow);
+}
 
+dialog {
+    border: 3px dashed var(--shadow);
+    color: var(--text);
+    background-color: var();
+    backdrop-filter: blur(2px);
+    margin: 0 auto;
+}
+input, textarea{
+    border-left: var(--shadow) 3px solid;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.199);
+    color: var(--text);
+    transition: 150ms ease;
+    padding: 0.2rem 0.4rem;
+}
+textarea:focus, input:focus{
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px var(--shadow);
+    border-left: var(--text) 3px solid;
+}
+input::placeholder,
+textarea::placeholder {
+    color: rgba(48, 48, 48, 0.288);
+}
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}
+input[type="checkbox"] {
+    appearance: none;
+    height: 1.3rem;
+    width: 1.3rem;
+    border: 2px solid var(--shadow);
+    border-radius: 0.3rem;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+input[type="checkbox"]::before {
+    background-color: var(--shadow);
+    content: "✔";
+    position: absolute;
+    background-color: transparent;
+    top: -2px;
+    left: 2px;
+    visibility: hidden;
+}
+input[type="checkbox"]:checked::before {
+    visibility: visible;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+form div {
+    display: grid;
+}
+label {
+    font-size: 0.9rem;
+    color: var(--text);
+    position: relative;
+}
+div:has(#read) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+label[for="read"] {
+    font-size: 1rem;
 }
