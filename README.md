@@ -14,7 +14,7 @@ A library app to store all the books you read.
 ## Preview
 View it live at Github Pages too :)
 
-![preview](./app-preview.png)
+![preview](./app-preview.png) 
 
 
 
