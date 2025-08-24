@@ -20,7 +20,9 @@ function displayLib () {
     //loops through the array and displays each book on the page
     myLib.forEach((book) => displayBook(book));
 }
+
 function displayBook(book) {
+    //make card for book
     let temp = document.getElementById("card-template").content;
     let card = document.importNode(temp, true);
     let properties = Object.keys(book);
@@ -30,18 +32,29 @@ function displayBook(book) {
          content = card.querySelector(`.${properties[i]}`);
          content.textContent = book[properties[i]];
      }
+     
      card.querySelector('.card').setAttribute("id", book.id);
      card.querySelector('.delete').addEventListener('click', (e) => {
         const id = e.target.parentNode.getAttribute('id');
         deleteBook(id);
         deleteCard(id);
-     });
+     }, { once: true });
+     card.getElementById('toggle-read').addEventListener('click', (e) => {
+        const id = e.target.parentNode.getAttribute('id');
+        toggleReadState(id);
+        updateReadDisplay(id);
+     })
+     //evenlistener for 'toggle read'
+     //should be similar to delete, know when it's click -> get parent's id
+     //for book in array: if read is read then become unread, otherwise vice versa
+     //and then .id .read change the card on ui
 
+     //checkbox issue, it always says "on" for read no matter what
+     //'how to get checkbox state using javascript'
 
     let body = document.querySelector('.container');
     body.appendChild(card);
 }
-
 function deleteBook(id) {
     //find book with the id
     //remove from lib array
@@ -68,16 +81,18 @@ submitBtn.addEventListener('click', () => {
 const form = document.getElementById('book-form');
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    
     const book = addBookToLib(
         document.getElementById('title').value,
         document.getElementById('author').value,
         document.getElementById('pages').value,
         document.getElementById('notes').value,
-        document.getElementById('read').value,
+        (document.getElementById('read').checked ? 'read' : 'unread')
     )
     displayBook(book);
     dialog.close();
     form.reset();
+    
 })
 
 
