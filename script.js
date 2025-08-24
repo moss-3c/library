@@ -41,8 +41,7 @@ function displayBook(book) {
      }, { once: true });
      card.getElementById('toggle-read').addEventListener('click', (e) => {
         const id = e.target.parentNode.getAttribute('id');
-        toggleReadState(id);
-        updateReadDisplay(id);
+        toggleRead(id);
      })
      //evenlistener for 'toggle read'
      //should be similar to delete, know when it's click -> get parent's id
@@ -54,6 +53,13 @@ function displayBook(book) {
 
     let body = document.querySelector('.container');
     body.appendChild(card);
+}
+function toggleRead(id) {
+    //toggle key in obj
+    const book = myLib.find((book) => book.id == id);
+    book.read = (book.read === 'read' ? 'unread' : 'read');
+    //update display
+    document.getElementById(id).querySelector('.read').textContent = book.read;
 }
 function deleteBook(id) {
     //find book with the id
@@ -96,8 +102,7 @@ form.addEventListener("submit", (e) => {
 })
 
 
-//testing
-myLib[0] = new Book("lotr","tolkien","987", "good book", "true");
-myLib[1] = new Book("bad book","ff","987", "sucks", "true");
-displayBook(myLib[0]);
-displayBook(myLib[1]);
+//initial
+myLib[0] = new Book("How to become a playpus","Perry","11", "very good book 11/10", "read");
+myLib[1] = new Book("Lord of the Rings","Tolkien","987", "want to read", "unread");
+displayLib();
