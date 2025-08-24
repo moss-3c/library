@@ -31,7 +31,7 @@ button {
     font-size: 1rem;
     background-color: var(--button-bg);
     color: var(--text);
-    transition: 150ms ease-in;
+    transition: 150ms ease;
     box-shadow: 0 5px var(--shadow);
 }
 
@@ -101,15 +101,7 @@ input, textarea{
     padding: 0.2rem 0.4rem;
     max-width: 100%;
 }
-button:focus {
-    border: none;
-    outline: none;
-    box-shadow: 0 0 10px var(--shadow), 0 5px var(--shadow);;
-    translate: (0, 5px);
-}
-.red-button:focus {
-    box-shadow: 0 0 10px var(--red-shadow), 0 5px var(--red-shadow);;
-}
+
 textarea:focus, 
 input:focus{
     border: none;
