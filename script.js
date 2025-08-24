@@ -105,4 +105,5 @@ form.addEventListener("submit", (e) => {
 //initial
 myLib[0] = new Book("How to become a playpus","Perry","11", "very good book 11/10", "read");
 myLib[1] = new Book("Lord of the Rings","Tolkien","987", "want to read", "unread");
+myLib[2] = new Book("Harry Potter","Rowling","?", "should reread", "read");
 displayLib();
