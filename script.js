@@ -11,6 +11,13 @@ function Book(title, author, pages, notes, read) {
     this.read = read;
     this.notes = notes;
 }
+Book.prototype.toggleRead =  function() {
+    //toggle key in obj
+    this.read = (this.read === 'read' ? 'unread' : 'read');
+    //update display
+    document.getElementById(this.id).querySelector('.read').textContent = this.read;
+}
+
 function addBookToLib(title, author, pages, notes, read) {
     book = new Book(title, author, pages, notes, read);
     myLib.push(book);
@@ -19,6 +26,9 @@ function addBookToLib(title, author, pages, notes, read) {
 function displayLib () {
     //loops through the array and displays each book on the page
     myLib.forEach((book) => displayBook(book));
+}
+function findBook(id) {
+    return myLib.find((book) => book.id == id);
 }
 
 function displayBook(book) {
@@ -41,7 +51,7 @@ function displayBook(book) {
      }, { once: true });
      card.getElementById('toggle-read').addEventListener('click', (e) => {
         const id = e.target.parentNode.getAttribute('id');
-        toggleRead(id);
+        findBook(id).toggleRead();
      })
      //evenlistener for 'toggle read'
      //should be similar to delete, know when it's click -> get parent's id
@@ -54,19 +64,13 @@ function displayBook(book) {
     let body = document.querySelector('.container');
     body.appendChild(card);
 }
-function toggleRead(id) {
-    //toggle key in obj
-    const book = myLib.find((book) => book.id == id);
-    book.read = (book.read === 'read' ? 'unread' : 'read');
-    //update display
-    document.getElementById(id).querySelector('.read').textContent = book.read;
-}
+
 function deleteBook(id) {
     //find book with the id
     //remove from lib array
    myLib.splice(
             myLib.indexOf(
-                myLib.find((book) => book.id === id)
+                findBook(id)
             ),
         1);
 }
